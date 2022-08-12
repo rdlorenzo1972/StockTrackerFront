@@ -46,16 +46,15 @@ public class stockControllerSignin extends HttpServlet {
 			//con.setRequestProperty("User-Agent", USER_AGENT);
 			int responseCode = con.getResponseCode();
 			System.out.println("GET Response Code :: " + responseCode);
-			if (responseCode == 201) { // success
-				String message = "Was able to signin";
+			if (responseCode == 200) { // success
+				String message = "User logged in succesfully";
 				request.setAttribute("message",  message);
 				String goToUrl = "/index.jsp";
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(goToUrl);
 				dispatcher.forward(request, response);	
 			} else {
-				//String message = "NOT able to signin";
-				int message = response.getStatus();
-				request.setAttribute("message",  Integer.toString(message));
+				String message = "Unable to verify user";
+				request.setAttribute("message",  message);
 				String goToUrl = "/index.jsp";
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(goToUrl);
 				dispatcher.forward(request, response);	
