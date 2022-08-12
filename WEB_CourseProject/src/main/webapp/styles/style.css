@@ -1,0 +1,42 @@
+@charset "ISO-8859-1";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #dddddd;
+  background-color: #101010;
+  font-family: arial, verdana, sans-serif;
+  /* border-top: 10px solid #1098ad;  */
+  position: relative;
+}
+
+.container {
+  width: 800px;
+    /*background-color: #ffffdd; */
+  margin: 0 auto;
+}
+
+.main-header {
+	/* background-color: #000066; */
+	color: #dddddd;
+}
+
+h1, h3 {
+	text-transform: uppercase;
+	margin-left: 20px;
+}
+
+h1 {
+	font-size: 60px;
+	font-family: arial narrow;
+	font-weight: normal;
+	padding-top: 20px;
+}
+
+form {
+	border-style: ridge;
+}
+
+
