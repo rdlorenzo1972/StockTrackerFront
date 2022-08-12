@@ -15,36 +15,22 @@
 			<h1>STOCK TRACKER</h1>
 		</header>
 		<article>
-			<form action="stockControllerSignin" method="GET">
-			
-				<table>
-					<tr>
-						<td><label for="user_name">Username </label></td>
-						<td><input type="text" name="user_name" value="${user.name} required></td>
-					</tr>
-					<tr>
-						<td><label for="user_password">Password </label></td>
-						<td><input type="password" name="user_password" value="${user.email}" required></td>
-					</tr>
-					<tr>
-						<td><input type="hidden" name="action" value="userSignin"></td>
-						<td><input type="submit" value="Signin" class="signinButton"></td>
-					</tr>
-					<tr>
-						<td><label class="or_separator">or</label><br></td>
-					</tr>
-					<tr>
-					
-					</tr>
-					<tr>
-						<td></td>
-						<td>Don't have an account? <a href="/register.jsp">Sign up now</a></td>
-					</tr>
+			<p style='color:red'><i>${message}</i></p>
+			<form action="stockControllerSignin" method="POST">
+				<label for="user_name">Username </label>
+				<input type="text" name="user_name" value="${user.name}" required><br>
 
-				</table>
+				<label for="user_password">Password </label>
+				<input type="password" name="user_password" value="${user.email}" required><br>
+
+				<input type="hidden" name="action" value="userSignin">
+				<input type="submit" value="Signin" class="signinButton"><br>
+				<div class="signUpText">
+					<label class="signintext" class="or_separator">or</label><br>
+					<label class="signintext">Don't have an account? <a href="/register.jsp">Sign up now</a></label>
+				</div>
 			</form>
 		</article>
 	</div>
-	
 </body>
 </html>
