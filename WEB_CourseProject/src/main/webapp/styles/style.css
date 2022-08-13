@@ -41,23 +41,39 @@ form {
 	border-style: ridge;
 	line-height: 2;
 	padding: 20px;
+	display: table;
+	width: 100%;
 }
 
 form label {
 	/*float: left;*/
-	width: 4em;
+	width: 35%;
 	margin-left: 1em;
+	display: table-cell;
+}
+
+form p {
+	display: table-row
+}
+
+span {
+	width: 100%;
+}
+
+imput {
+	display: table-cell;
+	
 }
 
 input[type="text"], input[type="password"] {
     margin-bottom: 0.2em;
-	width: 200px;
+	width: 75%;
 	height: 30px;
 }
 
 input[type="submit"] {
 	padding: .2em 4em;
-    margin: 0 0 2em 8em;
+    /*margin: 0 0 2em 8em;*/
     border-radius: 4px;
     background-color: #808080;
 }
@@ -67,6 +83,3 @@ input[type="submit"] {
 	margin: auto;
 }
 
-.signintext {
-	margin-left: 0px;
-}
