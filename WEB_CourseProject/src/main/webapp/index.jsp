@@ -27,7 +27,7 @@
 				<input type="submit" value="Signin" class="signinButton"><br>
 				<div class="signUpText">
 					<label class="signintext" class="or_separator">or</label><br>
-					<label class="signintext">Don't have an account? <a href="/register.jsp">Sign up now</a></label>
+					<label class="signintext">Don't have an account? <a href="register.jsp">Sign up now</a></label>
 				</div>
 			</form>
 		</article>

@@ -7,7 +7,7 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<link href="styles/style.css" rel="stylesheet" />
-	<title>STOCK TRACKER</title>
+	<title>STOCK TRACKER Display</title>
 </head>
 <body>
 	<div class="container">

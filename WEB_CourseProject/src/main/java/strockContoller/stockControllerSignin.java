@@ -104,7 +104,7 @@ public class stockControllerSignin extends HttpServlet {
 				dispatcher.forward(request, response);	
 			} else {
 				// String message = "Unable to verify user";
-				request.setAttribute("message",  message);
+				request.setAttribute("message",  "User already exist");
 				String goToUrl = "/index.jsp";
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(goToUrl);
 				dispatcher.forward(request, response);	
