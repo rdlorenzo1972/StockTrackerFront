@@ -18,19 +18,28 @@
 <html lang="en">
 <head>
 	<meta charset="ISO-8859-1">
-	<link href="styles/style.css" rel="stylesheet" />
+	<link href="styles/trackStyle.css" rel="stylesheet" />
 	<title>STOCK TRACKER Display</title>
 </head>
 <body>
 
-	<%-- sendingURL.equalsIgnoreCase("http://localhost:8080/WEB_CourseProject/stockControllerSignin")    --%>
 	
+
 	<div class="container">
 		<header class="main-header">
 			<h1>STOCK TRACKER</h1>
+			
+			<nav>
+			<a href="index.jsp">Logout need fix</a>
+			</nav>
 		</header>
+		
+		<aside>
+			<label>Stock Code</label><br>
+			<button>Click me!</button>
+		</aside>
+		
 		<article>
-			<p style='color:red'><i>${message}</i></p>
 			<form action="stockControllerSignin" method="POST">
 			
 				<label for="user_firstName">First Name </label>
