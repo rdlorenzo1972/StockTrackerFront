@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.lang.String" %>
+<%
+	String sendingURL = (String) request.getHeader("referer");
+	System.out.println(sendingURL);
+	if (!(sendingURL.equalsIgnoreCase("http://localhost:8080/WEB_CourseProject/index.jsp") || 
+			sendingURL.equalsIgnoreCase("http://localhost:8080/WEB_CourseProject/register.jsp") || 
+			sendingURL.equalsIgnoreCase("http://localhost:8080/WEB_CourseProject/TrackerDisplay.jsp") ||
+			sendingURL.equalsIgnoreCase("http://localhost:8080/WEB_CourseProject/stockControllerSignin"))) {
+		System.out.println(sendingURL);
+		response.sendRedirect("index.jsp");
+	}
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +22,9 @@
 	<title>STOCK TRACKER Display</title>
 </head>
 <body>
+
+	<%-- sendingURL.equalsIgnoreCase("http://localhost:8080/WEB_CourseProject/stockControllerSignin")    --%>
+	
 	<div class="container">
 		<header class="main-header">
 			<h1>STOCK TRACKER</h1>

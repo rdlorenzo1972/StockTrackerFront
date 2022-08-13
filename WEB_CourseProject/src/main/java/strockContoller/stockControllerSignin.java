@@ -49,15 +49,15 @@ public class stockControllerSignin extends HttpServlet {
 			//con.setRequestProperty("User-Agent", USER_AGENT);
 			int responseCode = con.getResponseCode();
 			System.out.println("GET Response Code :: " + responseCode);
-			String message = con.getResponseMessage();
+			//String message = con.getResponseMessage();
 			if (responseCode == 200) { // success
-				// String message = "User logged in successfully";
+				String message = "User logged in successfully";
 				request.setAttribute("message",  message);
 				String goToUrl = "/TrackerDisplay.jsp";
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(goToUrl);
 				dispatcher.forward(request, response);	
 			} else {
-				// String message = "Unable to verify user";
+				String message = "Unable to verify user";
 				request.setAttribute("message",  message);
 				String goToUrl = "/index.jsp";
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(goToUrl);
@@ -110,8 +110,12 @@ public class stockControllerSignin extends HttpServlet {
 				dispatcher.forward(request, response);	
 			}
 		
+		} else {
+			request.setAttribute("message",  "Sorry, error in page redirection, please try again");
+			String goToUrl = "/index.jsp";
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(goToUrl);
+			dispatcher.forward(request, response);	
 		}
-		
 	}
 
 	/**
