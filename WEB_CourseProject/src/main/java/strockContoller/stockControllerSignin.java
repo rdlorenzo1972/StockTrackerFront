@@ -2,6 +2,8 @@ package strockContoller;
 
 import java.awt.print.Printable;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +14,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 import java.net.URL;
 import java.net.HttpURLConnection;
+import org.json.JSONObject;
 
 /**
  * Servlet implementation class stockControllerSignin
@@ -46,14 +49,61 @@ public class stockControllerSignin extends HttpServlet {
 			//con.setRequestProperty("User-Agent", USER_AGENT);
 			int responseCode = con.getResponseCode();
 			System.out.println("GET Response Code :: " + responseCode);
+			String message = con.getResponseMessage();
 			if (responseCode == 200) { // success
-				String message = "User logged in succesfully";
+				// String message = "User logged in successfully";
+				request.setAttribute("message",  message);
+				String goToUrl = "/TrackerDisplay.jsp";
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(goToUrl);
+				dispatcher.forward(request, response);	
+			} else {
+				// String message = "Unable to verify user";
 				request.setAttribute("message",  message);
 				String goToUrl = "/index.jsp";
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(goToUrl);
 				dispatcher.forward(request, response);	
+			}
+		
+		} else if (request.getParameter("action").equals("userSignUp")) {
+			
+			String name = request.getParameter("user_name");
+			String password = request.getParameter("user_password");
+			String firstName = request.getParameter("user_firstName");
+			String lastName = request.getParameter("user_lastName");
+			
+			String url = "https://dev13.jhuep.com/StockTracker/user/signup";
+			System.out.print(url);
+			URL obj = new URL(url);
+			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+			con.setRequestMethod("PUT");
+			con.setDoOutput(true);
+			con.setDoInput(true);
+			con.setRequestProperty("Content-Type", "application/json");
+			con.setRequestProperty("Accept", "application/json");
+			con.setRequestMethod("PUT");
+			
+			JSONObject cred   = new JSONObject();
+			cred.put("firstname",firstName);
+			cred.put("lastname", lastName);
+			cred.put("email", name);
+			cred.put("password", password);
+
+			OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
+			wr.write(cred.toString());
+			wr.flush();
+			
+			int responseCode = con.getResponseCode();
+			System.out.println("GET Response Code :: " + responseCode);
+			String message = con.getResponseMessage();
+			
+			if (responseCode == 201) { // success
+				// String message = "User logged in successfully";
+				request.setAttribute("message",  message);
+				String goToUrl = "/TrackerDisplay.jsp";
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(goToUrl);
+				dispatcher.forward(request, response);	
 			} else {
-				String message = "Unable to verify user";
+				// String message = "Unable to verify user";
 				request.setAttribute("message",  message);
 				String goToUrl = "/index.jsp";
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(goToUrl);
