@@ -21,7 +21,11 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-rows: 50px 300px 50px;
+  width: 1200px;
+  grid-template-rows: 200px 300px 50px;
+  margin: auto;
+  margin-top: 20px;
+  row-gap: 10px;
 }
 
 .main-header {
@@ -33,6 +37,8 @@ body {
 	grid-column-end: 4;
 	grid-row-start: 1;
 	grid-row-end: 2;
+	border-style: ridge;
+	line-height: 2;
 }
 
 .aside-item {
@@ -40,6 +46,9 @@ body {
 	grid-column-end: 2;
 	grid-row-start: 2;
 	grid-row-end: 3;
+	border-right-style:ridge;
+	border-right-width: thin;
+	padding: 10;
 }
 
 .stockGraph {
@@ -54,11 +63,21 @@ body {
 	grid-column-end: 4;
 	grid-row-start: 3;
 	grid-row-end: 4;
+	border-top-style:ridge;
+	border-top-width: medium;
+	padding-top: 10px;
 }
 
 nav {
 	text-align: right;
+	
 }
+
+.logout_btn {
+	padding-right: 10px;
+	margin-right: 10px;
+}
+
 aside {
 	width:300px;
 }
@@ -71,7 +90,6 @@ h1 {
 	font-size: 60px;
 	font-family: arial narrow;
 	font-weight: normal;
-	padding-top: 20px;
 }
 
 form {
@@ -104,7 +122,6 @@ imput {
 
 input[type="text"], input[type="password"] {
     margin-bottom: 0.2em;
-	width: 75%;
 	height: 30px;
 }
 

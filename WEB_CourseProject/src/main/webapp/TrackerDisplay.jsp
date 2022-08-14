@@ -26,16 +26,15 @@
 	<div class="grid-container">
 		<header class="main-header">
 			<h1>STOCK TRACKER</h1>
-			
 			<nav>
-			<a href="index.jsp">Logout need fix</a>
+			<a href="index.jsp" class="logout_btn">Logout need fix</a>
 			</nav>
 		</header>
 		
 		<aside class="aside-item">
 			<label>Stock Code</label><br>
-			<input type="text" name="stockSymbol" size="10">
-			<button>Click me!</button>
+			<input type="text" name="stockSymbol" size="5"><br>
+			<button>Click me!</button><br>
 			The button above is not tied to form, intent is JS listener that will do input validation then update graph and news.
 		</aside>
 		
