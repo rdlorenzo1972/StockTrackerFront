@@ -19,11 +19,41 @@ body {
   margin: 0 auto;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-rows: 50px 300px 50px;
+}
+
 .main-header {
 	/* background-color: #000066; */
 	color: #dddddd;
 	text-align: center;
 	margin-bottom: 20px;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.aside-item {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+.stockGraph {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+.footer-item {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	grid-row-start: 3;
+	grid-row-end: 4;
 }
 
 nav {

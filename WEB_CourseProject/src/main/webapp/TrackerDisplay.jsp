@@ -23,9 +23,7 @@
 </head>
 <body>
 
-	
-
-	<div class="container">
+	<div class="grid-container">
 		<header class="main-header">
 			<h1>STOCK TRACKER</h1>
 			
@@ -34,34 +32,20 @@
 			</nav>
 		</header>
 		
-		<aside>
+		<aside class="aside-item">
 			<label>Stock Code</label><br>
+			<input type="text" name="stockSymbol" size="10">
 			<button>Click me!</button>
+			The button above is not tied to form, intent is JS listener that will do input validation then update graph and news.
 		</aside>
 		
-		<article>
-			<form action="stockControllerSignin" method="POST">
-			
-				<label for="user_firstName">First Name </label>
-				<input type="text" name="user_firstName" value="${user_firstName}" required><br>
-				
-				<label for="user_lastName">Last Name </label>
-				<input type="text" name="user_lastName" value="${user_lastName}" required><br>
-			
-				<label for="user_name">Email (Username) </label>
-				<input type="text" name="user_name" value="${user_name}" required><br>
-
-				<label for="user_password">Password </label>
-				<input type="password" name="user_password" value="${user_password}" required id="password"><br>
-				
-				<label for="user_passwordComfirm">Re-type Password </label>
-				<input type="password" name="user_passwordConfirm" required><br>
-
-				<input type="hidden" name="action" value="userSignUp">
-				<input type="submit" value="Sign up" class="signinButton"><br>
-
-			</form>
+		<article class="stockGraph">
+			This section will display the stock graph (1-year for stock symbol).
 		</article>
+		
+		<footer class="footer-item">
+		Will put news here 
+		</footer>
 	</div>
 </body>
 </html>
