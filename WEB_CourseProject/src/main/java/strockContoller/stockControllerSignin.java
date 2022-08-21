@@ -48,6 +48,7 @@ public class stockControllerSignin extends HttpServlet {
 			con.setRequestMethod("GET");
 			//con.setRequestProperty("User-Agent", USER_AGENT);
 			int responseCode = con.getResponseCode();
+			// con.getIfModifiedSince()
 			System.out.println("GET Response Code :: " + responseCode);
 			//String message = con.getResponseMessage();
 			if (responseCode == 200) { // success

@@ -8,15 +8,34 @@
 	<meta charset="ISO-8859-1">
 	<link href="styles/style.css" rel="stylesheet" />
 	<title>STOCK TRACKER</title>
+	<script>
+		function validateForm() 
+		{
+			var pass1 = document.forms["regAccount"]["user_password"].value;
+			var pass2 = document.forms["regAccount"]["user_passwordConfirm"].value;
+			
+			if (pass1 != pass2) {
+				alert("Passwords must match. Please re-enter matching passwords.");
+				return false;
+			}
+			return true;
+		}  
+	</script>
 </head>
 <body>
+
+	<script>
+	
+	</script>
+
+
 	<div class="container">
 		<header class="main-header">
 			<h1>STOCK TRACKER</h1>
 		</header>
 		<article>
 			<p style='color:red'><i>${message}</i></p>
-			<form action="stockControllerSignin" method="POST">
+			<form name="regAccount" action="stockControllerSignin" onsubmit="return validateForm()" method="POST">
 				<p>
 				<label for="user_firstName">First Name </label>
 				<input type="text" name="user_firstName" value="${user_firstName}" required><br>
